@@ -14,7 +14,7 @@ namespace CKK.Logic.Models
         private Product _product2;
         private Product _product3;
 
-        public int GetID()
+        public int GetId()
         {
             return _id;
         }
@@ -34,51 +34,55 @@ namespace CKK.Logic.Models
             _name = name;
         }
 
-        public void AddStoreItem(Product product)
+        public void AddStoreItem(Product prod)
         {
             if (_product1 == null)
             {
-                _product1 = product;
+                _product1 = prod;
             }
             else if (_product2 == null)
             {
-                _product2 = product;
+                _product2 = prod;
             }
             else if (_product3 == null)
             {
-                _product3 = product;
+                _product3 = prod;
             }
         }
 
-        public void RemoveStoreItem(int productNumber)
+        public void RemoveStoreItem(int productNum)
         {
-            if (productNumber == 1)
+            if (productNum == 1)
             {
                 _product1 = null;
             }
-            else if (productNumber == 2)
+            else if (productNum == 2)
             {
                 _product2 = null;
             }
-            else if (productNumber == 3)
+            else if (productNum == 3)
             {
                 _product3 = null;
             }
         }
 
-        public Product GetStoreItem(int productNumber)
+        public Product GetStoreItem(int productNum)
         {
-            if (productNumber == 1)
+            if (productNum == 1)
             {
                 return _product1;
             }
-            else if (productNumber == 2)
+            else if (productNum == 2)
             {
                 return _product2;
             }
-            else
+            else if (productNum == 3)
             {
                 return _product3;
+            }
+            else
+            {
+                return null;
             }
         }
 
@@ -92,9 +96,13 @@ namespace CKK.Logic.Models
             {
                 return _product2;
             }
-            else
+            else if (_product3.GetId() == id)
             {
                 return _product3;
+            }
+            else
+            {
+                return null;
             }
         }
     }
