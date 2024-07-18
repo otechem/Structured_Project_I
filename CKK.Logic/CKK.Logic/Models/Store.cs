@@ -76,7 +76,7 @@ namespace CKK.Logic.Models
             {
                 return _product2;
             }
-            else if (productNumber == 3)
+            else
             {
                 return _product3;
             }
@@ -92,7 +92,7 @@ namespace CKK.Logic.Models
             {
                 return _product2;
             }
-            else if (_product3.GetId() == id)
+            else
             {
                 return _product3;
             }
